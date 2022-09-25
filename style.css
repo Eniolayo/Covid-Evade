@@ -1,0 +1,186 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+ul {
+  list-style: none;
+  padding: unset;
+}
+button {
+  border: unset;
+  background-color: unset;
+}
+:root {
+  --primary-clr: hsl(263, 77%, 44%);
+  --primary-clr-100: hsl(270, 21%, 62%);
+  --white-clr: hsl(285, 100%, 98%);
+  --dark-clr: hsl(268, 21%, 12%);
+}
+body {
+  background: var(--dark-clr);
+  color: var(--white-clr);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+}
+.title {
+  margin-block: 3rem 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+header {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+}
+.playground {
+  width: min(85%, 500px);
+  height: fit-content;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 5px;
+  padding: 4px 4px;
+  place-content: center;
+  background: var(--primary-clr);
+  border-radius: 5px;
+}
+.field {
+  height: 32px;
+}
+img {
+  margin: 0 auto;
+}
+.female,
+.male {
+  border: 1px solid var(--primary-clr);
+  cursor: pointer;
+  border-radius: 5px;
+}
+:is(.female.active, .male.active) {
+  background-color: var(--primary-clr);
+}
+.popup {
+  background: var(--primary-clr-100);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  transform: translate(-50%, -50%);
+  height: 450px;
+  width: min(90%, 60rem);
+  font-size: 1.7rem;
+  color: var(--dark-clr);
+  border-radius: 5px;
+}
+.arrow-left,
+.arrow-right {
+  background: var(--primary-clr-100);
+  color: var(--white-clr);
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.navigator-mobile {
+  padding-top: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+}
+input {
+  width: 100%;
+  border-radius: 5px;
+}
+.game--name__provider {
+  border: none;
+  padding: 10px;
+}
+.start {
+  margin-top: 20px;
+  width: fit-content;
+  justify-self: center;
+  padding: 10px;
+  border-radius: 70px;
+  background-color: var(--dark-clr);
+  color: var(--primary-clr);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 300ms ease-in-out;
+}
+.start:hover {
+  color: var(--dark-clr);
+  background-color: var(--primary-clr);
+}
+
+.error-text {
+  display: none;
+  color: crimson;
+  font-size: 1.2rem;
+}
